@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mzb.myblog.mapper.BlogMapper" >    
+  <select id="selectAll" resultType="Blog" >
+    select * from blog
+  </select>
+  <select id="selectById" resultType="Blog" parameterType="int" >
+    select * from blog
+    where id = #{id}
+  </select>
+  <delete id="delete" parameterType="int" >
+    delete from blog
+    where id = #{id}
+  </delete>  
+  <insert id="insert" parameterType="Blog" >
+    insert into blog (title, brief, 
+      content, author, category_id, 
+      create_time, modify_time, page_view, 
+      recommond_count, oppose_count,
+      state,is_del)
+    values (#{title}, #{brief}, 
+      #{content}, #{author}, #{category_id}, 
+      #{create_time}, #{modify_time}, #{page_view}, 
+      #{recommond_count}, #{oppose_count},
+      #{state}, #{is_del})
+  </insert>
+  <insert id="insertSelective" parameterType="Blog" >
+    insert into blog 
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="title != null" >
+        title,
+      </if>
+      <if test="brief != null" >
+        brief,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="author != null" >
+        author,
+      </if>
+      <if test="category_id != null" >
+        category_id,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
+      <if test="modify_time != null" >
+        modify_time,
+      </if>
+      <if test="page_view != null" >
+        page_view,
+      </if>
+      <if test="recommond_count != null" >
+        recommond_count,
+      </if>
+      <if test="oppose_count != null" >
+        oppose_count,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+      <if test="is_del != null" >
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="title != null" >
+        #{title},
+      </if>
+      <if test="brief != null" >
+        #{brief},
+      </if>
+      <if test="content != null" >
+        #{content},
+      </if>
+      <if test="author != null" >
+        #{author},
+      </if>
+      <if test="category_id != null" >
+        #{category_id},
+      </if>
+      <if test="create_time != null" >
+        #{create_time},
+      </if>
+      <if test="modify_time != null" >
+        #{modify_time},
+      </if>
+      <if test="page_view != null" >
+        #{page_view},
+      </if>
+      <if test="recommond_count != null" >
+        #{recommond_count},
+      </if>
+      <if test="oppose_count != null" >
+        #{oppose_count},
+      </if>
+      <if test="state != null" >
+        #{state},
+      </if>
+      <if test="is_del != null" >
+        #{is_del},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelective" parameterType="Blog" >
+    update blog
+    <set >
+      <if test="title != null" >
+        title = #{title},
+      </if>
+      <if test="brief != null" >
+        brief = #{brief},
+      </if>
+      <if test="content != null" >
+        content = #{content},
+      </if>
+      <if test="author != null" >
+        author = #{author},
+      </if>
+      <if test="category_id != null" >
+        category_id = #{category_id},
+      </if>
+      <if test="create_time != null" >
+        create_time = #{create_time},
+      </if>
+      <if test="modify_time != null" >
+        modify_time = #{modify_time},
+      </if>      
+      <if test="page_view != null" >
+        page_view = #{page_view},
+      </if>
+      <if test="recommond_count != null" >
+        recommond_count = #{recommond_count},
+      </if>
+      <if test="oppose_count != null" >
+        oppose_count = #{oppose_count},
+      </if>
+      <if test="state != null" >
+        state = #{state},
+      </if>
+      <if test="is_del != null" >
+        is_del = #{is_del},
+      </if>
+    </set>
+    where id = #{id}
+  </update>
+  <update id="update" parameterType="Blog" >
+    update blog
+    set title = #{title},
+      brief = #{brief},
+      content = #{content},
+      author = #{author},
+      category_id = #{category_id},
+      create_time = #{create_time},
+      modify_time = #{modify_time},
+      page_view = #{page_view},
+      recommond_count = #{recommond_count},
+      oppose_count = #{oppose_count},
+      state = #{state},
+      is_del = #{is_del}
+    where id = #{id}
+  </update>
+</mapper>

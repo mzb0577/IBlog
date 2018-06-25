@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mzb.myblog.mapper.AccessRecordMapper" >    
+  <select id="selectAll" resultType="AccessRecord" >
+    select * from access_record
+  </select>
+  <select id="selectById" resultType="AccessRecord" parameterType="int" >
+    select * from access_record
+    where id = #{id}
+  </select>
+  <delete id="delete" parameterType="int" >
+    delete from access_record
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="AccessRecord" >
+    insert into access_record (
+      user_id, visitor_ip, blog_id, 
+      access_time)
+    values (#{user_id}, #{visitor_ip}, 
+      #{blog_id}, #{access_time})
+  </insert>
+  <insert id="insertSelective" parameterType="AccessRecord" >
+    insert into access_record 
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="user_id != null" >
+        user_id,
+      </if>
+      <if test="visitor_ip != null" >
+        visitor_ip,
+      </if>
+      <if test="blog_id != null" >
+        blog_id,
+      </if>
+      <if test="access_time != null" >
+        access_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="user_id != null" >
+        #{user_id},
+      </if>
+      <if test="visitor_ip != null" >
+        #{visitor_ip},
+      </if>
+      <if test="blog_id != null" >
+        #{blog_id},
+      </if>
+      <if test="access_time != null" >
+        #{access_time},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelective" parameterType="AccessRecord" >
+    update access_record
+    <set >
+      <if test="user_id != null" >
+        user_id = #{user_id},
+      </if>
+      <if test="visitor_ip != null" >
+        visitor_ip = #{visitor_ip},
+      </if>
+      <if test="blog_id != null" >
+        blog_id = #{blog_id},
+      </if>
+      <if test="access_time != null" >
+        access_time = #{access_time},
+      </if>
+    </set>
+    where id = #{id}
+  </update>
+  <update id="update" parameterType="AccessRecord" >
+    update access_record
+    set user_id = #{user_id},
+      visitor_ip = #{visitor_ip},
+      blog_id = #{blog_id},
+      access_time = #{access_time}
+    where id = #{id}
+  </update>
+</mapper>

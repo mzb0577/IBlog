@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mzb.myblog.mapper.UserMapper" >    
+  <select id="selectAll" resultType="User" >
+    select * from user
+  </select>
+  <select id="selectById" resultType="User" parameterType="int" >
+    select * from user
+    where id = #{id}
+  </select>
+  <delete id="delete" parameterType="int" >
+    delete from user
+    where id = #{id}
+  </delete>  
+  <insert id="insert" parameterType="User" >
+    insert into user (name, password, 
+      qq, wechat, e_mail, 
+      role, create_time, update_time, 
+      is_disabled, is_del)
+    values (#{name}, #{password}, 
+      #{qq}, #{wechat}, #{e_mail}, 
+      #{role}, #{create_time}, #{update_time}, 
+      #{is_disabled}, #{is_del})
+  </insert>
+  <insert id="insertSelective" parameterType="User" >
+    insert into user 
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="qq != null" >
+        qq,
+      </if>
+      <if test="wechat != null" >
+        wechat,
+      </if>
+      <if test="e_mail != null" >
+        e_mail,
+      </if>
+      <if test="role != null" >
+        role,
+      </if>
+      <if test="create_time != null" >
+        create_time,
+      </if>
+      <if test="update_time != null" >
+        update_time,
+      </if>
+      <if test="is_disabled != null" >
+        is_disabled,
+      </if>
+      <if test="is_del != null" >
+        is_del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        #{name},
+      </if>
+      <if test="password != null" >
+        #{password},
+      </if>
+      <if test="qq != null" >
+        #{qq},
+      </if>
+      <if test="wechat != null" >
+        #{wechat},
+      </if>
+      <if test="e_mail != null" >
+        #{e_mail},
+      </if>
+      <if test="role != null" >
+        #{role},
+      </if>
+      <if test="create_time != null" >
+        #{create_time},
+      </if>
+      <if test="update_time != null" >
+        #{update_time},
+      </if>
+      <if test="is_disabled != null" >
+        #{is_disabled},
+      </if>
+      <if test="is_del != null" >
+        #{is_del},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelective" parameterType="User" >
+    update user
+    <set >
+      <if test="name != null" >
+        name = #{name},
+      </if>
+      <if test="password != null" >
+        password = #{password},
+      </if>
+      <if test="qq != null" >
+        qq = #{qq},
+      </if>
+      <if test="wechat != null" >
+        wechat = #{wechat},
+      </if>
+      <if test="e_mail != null" >
+        e_mail = #{e_mail},
+      </if>
+      <if test="role != null" >
+        role = #{role},
+      </if>
+      <if test="create_time != null" >
+        create_time = #{create_time},
+      </if>
+      <if test="update_time != null" >
+        update_time = #{update_time},
+      </if>
+      <if test="is_disabled != null" >
+        is_disabled = #{is_disabled},
+      </if>
+      <if test="is_del != null" >
+        is_del = #{is_del},
+      </if>
+    </set>
+    where id = #{id}
+  </update>
+  <update id="update" parameterType="User" >
+    update user
+    set name = #{name},
+      password = #{password},
+      qq = #{qq},
+      wechat = #{wechat},
+      e_mail = #{e_mail},
+      role = #{role},
+      create_time = #{create_time},
+      update_time = #{update_time},
+      is_disabled = #{is_disabled},
+      is_del = #{is_del}
+    where id = #{id}
+  </update>
+</mapper>
