@@ -1,0 +1,39 @@
+.func-area{
+	margin:30px 15px 15px 15px;
+}
+.search-group{
+	display: inline-block;
+}
+.search-input{
+	width: 200px;
+	display: inline-block;
+}
+.btn-group{
+	float: right;
+}
+.table-area{
+	margin:0px 15px;
+}
+.gs-layer-title .layui-layer-title{
+	border:none;
+	background-color: #3a3e52;
+	color:#fff;
+}
+.gs-layer-title .layui-layer-close{
+	color: #fff;
+}
+.gs-form{
+	display: none;
+	padding: 20px;
+	overflow-y: hidden;
+}
+.gs-form .layui-form-label{
+	padding:9px 0px;
+	width: 60px;
+}
+.gs-form .layui-input-block{
+	margin-left: 80px;
+}
+.gs-textarea{
+	min-height: 80px;
+}

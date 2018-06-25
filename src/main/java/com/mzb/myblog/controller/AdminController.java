@@ -11,4 +11,9 @@ public class AdminController {
 	public String getMain() {
 		return "admin/main";
 	}
+	
+	@RequestMapping("/userManage")
+	public String getUserManage(){
+		return "admin/userManage";
+	}
 }
