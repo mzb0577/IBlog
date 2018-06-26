@@ -14,26 +14,26 @@
 .table-area{
 	margin:0px 15px;
 }
-.gs-layer-title .layui-layer-title{
+.pop-layer-title .layui-layer-title{
 	border:none;
 	background-color: #3a3e52;
 	color:#fff;
 }
-.gs-layer-title .layui-layer-close{
+.pop-layer-title .layui-layer-close{
 	color: #fff;
 }
-.gs-form{
+.pop-form{
 	display: none;
 	padding: 20px;
 	overflow-y: hidden;
 }
-.gs-form .layui-form-label{
+.pop-form .layui-form-label{
 	padding:9px 0px;
 	width: 60px;
 }
-.gs-form .layui-input-block{
+.pop-form .layui-input-block{
 	margin-left: 80px;
 }
-.gs-textarea{
+.pop-textarea{
 	min-height: 80px;
 }

@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>iBlog后台管理</title>
   <link rel="stylesheet" href="/layui/css/layui.css">
+  <link rel="stylesheet" href="/css/admin/layuiModify.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -44,7 +45,9 @@
   </div>
 
   <div class="layui-body">
-    <div class="cur-page" style="height: 30px;"></div>
+    <div class="nav-show">            
+        <span>当前位置</span><span>/</span><span>用户管理</span>
+    </div>
     <iframe src="" width="100%" height="100%" id="ifr-body"></iframe>
   </div>
 </div>

@@ -10,6 +10,7 @@ import java.util.Date;
  *
  */
 public class User {
+	
 	private Integer id;
 	
 	private String name;
@@ -28,9 +29,17 @@ public class User {
 	
 	private Date update_time;
 	
+	//是否禁用
 	private Boolean is_disabled;
 	
+	//是否删除
 	private Boolean is_del;
+	
+	public User(){
+		this.create_time = new Date();
+		this.is_disabled = false;	
+		this.is_del = false;
+	}
 
 	public Integer getId() {
 		return id;
